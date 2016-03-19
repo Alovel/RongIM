@@ -47,7 +47,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedNativeLibrary Include="Jars\libs\x86\libRongIMLib.so" />
     <None Include="Additions\AboutAdditions.txt" />
     <EmbeddedNativeLibrary Include="Jars\libs\armeabi-v7a\libRongIMLib.so" />
     <EmbeddedNativeLibrary Include="Jars\libs\armeabi\libRongIMLib.so" />
