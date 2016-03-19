@@ -50,6 +50,7 @@
     <None Include="Additions\AboutAdditions.txt" />
     <EmbeddedNativeLibrary Include="Jars\libs\armeabi-v7a\libRongIMLib.so" />
     <EmbeddedNativeLibrary Include="Jars\libs\armeabi\libRongIMLib.so" />
+    <EmbeddedNativeLibrary Include="Jars\libs\x86\libRongIMLib.so" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
