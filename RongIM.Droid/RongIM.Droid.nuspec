@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.1.1</version>
+    <title>RongIM.Droid</title>
+    <authors>y-z-f</authors>
+    <owners>sino</owners>
+    <licenseUrl>http://opensource.org/licenses/GPL-3.0</licenseUrl>
+    <projectUrl>http://www.sowl.cn</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>融云绑定SDK</description>
+    <copyright>Copyright 2016</copyright>
+    <tags>Xamarin.Android RongIM</tags>
+  </metadata>
+</package>
