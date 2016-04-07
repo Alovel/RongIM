@@ -96,7 +96,7 @@
 	<attr path="/api/package[@name='io.rong.imlib']/interface[@name='NativeObject.ChatroomInfoListener']/method[@name='OnSuccess']" name="argsType">ChatroomInfoSuccessEventArgs</attr>
 	<attr path="/api/package[@name='io.rong.imlib']/interface[@name='NativeObject.GetUserDataListener']/method[@name='OnError']" name="argsType">GetUserDataErrorEventArgs</attr>
 	<attr path="/api/package[@name='io.rong.imlib']/interface[@name='NativeObject.GetUserDataListener']/method[@name='OnSuccess']" name="argsType">GetUserDataSuccessEventArgs</attr>
-	
+
 	<attr path="/api/package[@name='io.rong.imlib.location.stateMachine']/interface[@name='IState']" name="name">IMachineState</attr>
 	<attr path="/api/package[@name='io.rong.imlib.model']/class[@name='MessageContent.MessageHandler.DefaultMessageHandler']/method[@name='afterDecodeMessage']/parameter[@name='p1']" name="type">Java.Lang.Object</attr>
 	<attr path="/api/package[@name='io.rong.imlib.model']/class[@name='MessageContent.MessageHandler.DefaultMessageHandler']/method[@name='beforeEncodeMessage']/parameter[@name='p1']" name="type">Java.Lang.Object</attr>
@@ -108,4 +108,6 @@
 	<attr path="/api/package[@name='io.rong.message']/class[@name='VoiceMessageHandler']/method[@name='afterDecodeMessage']/parameter[@name='p1']" name="type">Java.Lang.Object</attr>
 
 	<attr path="/api/package[@name='io.rong.imlib.statistics']/class[@name='DeviceId']/method[@name='getType']" name="name">GetDeviceType</attr>
+	
+	<remove-node path="/api/package[@name='io.rong.imkit.widget.provider']/interface[@name='IContainerItemProvider']/method[@name='bindView']" ></remove-node>
 </metadata>
