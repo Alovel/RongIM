@@ -28,3 +28,4 @@ using Android.App;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: MetaData("RONG_CLOUD_APP_KEY", Value = "x4vkb1qpvehik")]

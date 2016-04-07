@@ -47,9 +47,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Additions\AboutAdditions.txt" />
-    <EmbeddedNativeLibrary Include="Jars\libs\armeabi-v7a\libRongIMLib.so" />
-    <EmbeddedNativeLibrary Include="Jars\libs\armeabi\libRongIMLib.so" />
+    <EmbeddedNativeLibrary Include="Jars\libs\x86\libRongIMLib.so" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -58,7 +56,14 @@
     <TransformFile Include="Transforms\EnumMethods.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedJar Include="Jars\Rong_IMKit_v2_4_8.jar" />
+    <EmbeddedNativeLibrary Include="Jars\libs\armeabi-v7a\libRongIMLib.so" />
+    <EmbeddedNativeLibrary Include="Jars\libs\armeabi\libRongIMLib.so" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedJar Include="Jars\Rong_IMKit_v2_4_11.jar" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedJar Include="Jars\RongIMKitRes.jar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
