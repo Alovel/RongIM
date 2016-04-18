@@ -16,8 +16,12 @@ namespace Sample
 	{
 		public static void Init()
 		{
-			IO.Rong.Imkit.R.Array.RcEmojiCode = Resource.Array.rc_emoji_code;
-			IO.Rong.Imkit.R.Array.RcEmojiRes = Resource.Array.rc_emoji_res;
-		}
+            IO.Rong.Imkit.R.Array.RcEmojiCode = Resource.Array.rc_emoji_code;
+            IO.Rong.Imkit.R.Array.RcEmojiRes = Resource.Array.rc_emoji_res;
+
+            IO.Rong.Imkit.R.Layout.RcFrConversationlist = Resource.Layout.rc_fr_conversationlist;
+            IO.Rong.Imkit.R.Color.RcTextColorPrimaryInverse = Resource.Color.rc_text_color_primary_inverse;
+
+        }
 	}
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Sample.Sample" android:versionCode="1" android:versionName="1.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.xamarin.rongim.example" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="15" />
 	<activity android:name="ConversationListActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden|adjustResize">
 		<intent-filter>
@@ -8,6 +8,8 @@
 			<data android:host="io.rong.fast" android:pathPrefix="/conversationlist" android:scheme="rong" />
 		</intent-filter>
 	</activity>
+  
+
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -30,6 +32,8 @@
 	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	<application android:label="Sample" android:allowBackup="true">
+
+    
 		<receiver android:name="io.rong.push.PushReceiver" android:process="io.rong.push">
 			<!-- Waring: The name of the push process can't be changed!!! -->
 			<intent-filter>
@@ -78,5 +82,7 @@
 			</intent-filter>
 		</receiver>
 		<receiver android:name="io.rong.imlib.HeartbeatReceiver" android:process=":ipc" />
+
+    
 	</application>
 </manifest>
