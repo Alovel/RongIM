@@ -25,11 +25,6 @@ namespace Sample
 			if (ApplicationInfo.PackageName.Equals(GetCurProcessName(ApplicationContext)) || "io.rong.push".Equals(GetCurProcessName(ApplicationContext)))
 			{
                 RongIM.Init(this);
-
-				if (ApplicationInfo.PackageName.Equals(GetCurProcessName(ApplicationContext)))
-				{
-					Java.Lang.Thread.DefaultUncaughtExceptionHandler = new RongExceptionHandler(this);
-				}
             }
 		}
 
