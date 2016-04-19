@@ -35,10 +35,6 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
-    <Reference Include="RongIM.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RongIM.Droid.2.4.11.0\lib\MonoAndroid50\RongIM.Droid.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
@@ -51,6 +47,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedNativeLibrary Include="Jars\libs\x86\libRongIMLib.so" />
     <None Include="packages.config" />
     <None Include="RongIM.Droid.nuspec" />
   </ItemGroup>
@@ -64,13 +61,11 @@
     <EmbeddedNativeLibrary Include="Jars\libs\armeabi\libRongIMLib.so" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedJar Include="Jars\Rong_IMKit_v2_4_11.jar" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedJar Include="Jars\RongIMKitRes.jar" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Jars\libs\x86\" />
+    <EmbeddedJar Include="Jars\Rong_IMKit_v2_5_0.jar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

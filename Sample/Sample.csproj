@@ -43,12 +43,8 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="RongIM.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RongIM.Droid.2.4.11.0\lib\MonoAndroid50\RongIM.Droid.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Sino.Droid.ContactListView, Version=1.0.5949.17171, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sino.Droid.ContactListView.1.0\lib\MonoAndroid60\Sino.Droid.ContactListView.dll</HintPath>
+    <Reference Include="Sino.Droid.ContactListView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sino.Droid.ContactListView.1.0.0\lib\MonoAndroid\Sino.Droid.ContactListView.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -1155,6 +1151,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\demo_title_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RongIM.Droid\RongIM.Droid.csproj">
+      <Project>{dcec504c-ad55-4225-8ba3-62535da64e35}</Project>
+      <Name>RongIM.Droid</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
