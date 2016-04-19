@@ -4,10 +4,11 @@ using Android.App;
 using Android.Content;
 using Android.Runtime;
 using IO.Rong.Imkit;
+using IO.Rong.Imlib.Ipc;
 
 namespace Sample
 {
-    [Application]
+	[Application]
 	public class App : Application
 	{
 		public App()
@@ -24,6 +25,11 @@ namespace Sample
 			if (ApplicationInfo.PackageName.Equals(GetCurProcessName(ApplicationContext)) || "io.rong.push".Equals(GetCurProcessName(ApplicationContext)))
 			{
                 RongIM.Init(this);
+
+				if (ApplicationInfo.PackageName.Equals(GetCurProcessName(ApplicationContext)))
+				{
+					Java.Lang.Thread.DefaultUncaughtExceptionHandler = new RongExceptionHandler(this);
+				}
             }
 		}
 

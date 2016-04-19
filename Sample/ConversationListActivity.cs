@@ -8,9 +8,7 @@ using IO.Rong.Imlib.Model;
 
 namespace Sample
 {
-    [Activity(Label = "ConversationListActivity")]
-	[IntentFilter(new string[] { "android.intent.action.VIEW" },
-		Categories = new string[] { "android.intent.category.DEFAULT" })]
+	[Activity]
 	public class ConversationListActivity : FragmentActivity
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
