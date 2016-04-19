@@ -43,16 +43,29 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
+    <Reference Include="RongIM.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RongIM.Droid.2.4.11.0\lib\MonoAndroid50\RongIM.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sino.Droid.ContactListView, Version=1.0.5949.17171, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sino.Droid.ContactListView.1.0\lib\MonoAndroid60\Sino.Droid.ContactListView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="UniversalImageLoader, Version=1.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UniversalImageLoader.1.9.4.1\lib\MonoAndroid\UniversalImageLoader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Android.Support.v4.23.2.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnalogInterface\AnalogFriendRelationshipcs.cs" />
     <Compile Include="App.cs" />
     <Compile Include="ConversationListActivity.cs" />
     <Compile Include="MainActivity.cs" />
@@ -60,9 +73,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RongIMClientCallback.cs" />
     <Compile Include="RongIMRes.cs" />
+    <Compile Include="UI\ConversationActivity.cs" />
+    <Compile Include="UI\ConversationListActivity.cs" />
+    <Compile Include="UI\HomeActivity.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -81,12 +96,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RongIM.Droid\RongIM.Droid.csproj">
-      <Project>{dcec504c-ad55-4225-8ba3-62535da64e35}</Project>
-      <Name>RongIM.Droid</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\rc_an_voice_receive.xml" />
@@ -1134,6 +1143,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-sw\rc_string.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\demo_home.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\demo_conversation.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\demo_actionbar.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\demo_title_back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,19 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
-using Android.OS;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using IO.Rong.Imkit;
 
 namespace Sample
 {
-	[Application]
+    [Application]
 	public class App : Application
 	{
 		public App()
@@ -29,8 +23,8 @@ namespace Sample
 
 			if (ApplicationInfo.PackageName.Equals(GetCurProcessName(ApplicationContext)) || "io.rong.push".Equals(GetCurProcessName(ApplicationContext)))
 			{
-				RongIM.Init(this);
-			}
+                RongIM.Init(this);
+            }
 		}
 
 		public static string GetCurProcessName(Context context)
