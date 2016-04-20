@@ -1,9 +1,12 @@
 using Android.OS;
 using Android.Widget;
 using Android.Support.V4.App;
+using Android.App;
 
 namespace Sample.UI
 {
+
+    [Activity]
     public class ConversationListActivity :FragmentActivity
     {
         private TextView mTitle;
