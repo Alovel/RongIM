@@ -4,6 +4,8 @@ using Android.OS;
 using IO.Rong.Imkit;
 using Android.Util;
 using Android.Content;
+using Sample.UI;
+using Sample.AnalogInterface;
 
 namespace Sample
 {
@@ -18,12 +20,12 @@ namespace Sample
             Button btn1 = FindViewById<Button>(Resource.Id.mBtn1);
             btn1.Click += (s, e) => 
             {
-                Connect("OPNy8Dqj00pCrKpg0GKLhk0F6E/AvTTPe+oz2abWHRYjaLgFagbKd7ZNHRoD12+mMHAlOYDyVJCDNofCSx1qxw==");
+                Connect("4Ajc30pgab3NRKfT8kmLqGYdDZRj6BeRoAR/bJf7QdjPTC/v5UhAkvY7Rhiy2PRE6jts2/CvARo3gX1rpNGu5A==");
             };
 
 			button.Click += delegate
 			{
-				Connect("h66xBSG6tjDe2KJEB9/zQk6UjQhdA5jCxaKmJ0Ey8qDfmSD+rq/CbI/wPQl8V6yo48SHe3fBqFWR6DpFGmVLJw==");
+				Connect("mPqbWyp9IwwhG2uZhiG46mYdDZRj6BeRoAR/bJf7QdjPTC/v5UhAkk6+6JnWlOcYEmOUo2HdtR1233CXsBt44A==");
 			};
 		}
 
@@ -48,10 +50,18 @@ namespace Sample
                         {
                             Toast.MakeText(this, "Success", ToastLength.Short).Show();
                         });
+                        if (RongIM.Instance != null)
+                        {
+                            string userId = TestData.GetUserIdByToken(token);
+                            string avatorUri = TestData.GetAvatorByUserId(userId);
+                            RongIM.Instance.SetCurrentUserInfo(new IO.Rong.Imlib.Model.UserInfo(userId,"###"+userId
+                                ,Android.Net.Uri.Parse(avatorUri)));
+                            LocalDB.SaveUserInfo(userId);
+                            Intent intent = new Intent(this, typeof(HomeActivity));
+                            StartActivity(intent);
+                            Log.Debug("MainActivity", "-Success");
+                        }
 
-                        Intent intent = new Intent(this, typeof(ConversationListActivity));
-                        StartActivity(intent);
-                        Log.Debug("MainActivity", "-Success");
                     },
                     Error = (e, s) =>
                     {

@@ -64,6 +64,7 @@ namespace Sample
 			FixRes(typeof(Resource.Style), typeof(R.Style));
 			FixRes(typeof(Resource.Styleable), typeof(R.Styleable));
 
+            //R.Drawable.RcIcDefCoversationPortrait = Resource.Drawable.rc_ic_def_coversation_portrait;
 			//R.Array.RcEmojiCode = Resource.Array.rc_emoji_code;
 			//R.Array.RcEmojiRes = Resource.Array.rc_emoji_res;
         }

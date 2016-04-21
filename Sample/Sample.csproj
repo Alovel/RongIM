@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -54,8 +54,16 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="Sino.Droid.ContactListView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sino.Droid.ContactListView.1.0.0\lib\MonoAndroid\Sino.Droid.ContactListView.dll</HintPath>
+    <Reference Include="Pinyin4net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pinyin4Net.1.0.1\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10\Pinyin4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RongIM.Droid, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RongIM.Droid.2.5.0.0\lib\MonoAndroid50\RongIM.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sino.Droid.ContactListView, Version=1.0.5954.19067, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sino.Droid.ContactListView.1.0.4\lib\MonoAndroid60\Sino.Droid.ContactListView.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -72,17 +80,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnalogInterface\AnalogFriendRelationshipcs.cs" />
+    <Compile Include="AnalogInterface\TestData.cs" />
     <Compile Include="App.cs" />
     <Compile Include="ConversationListActivity.cs" />
+    <Compile Include="LocalDB.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MConversationListener.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RongIMClientCallback.cs" />
     <Compile Include="RongIMRes.cs" />
+    <Compile Include="UI\ChatFragment.cs" />
     <Compile Include="UI\ConversationActivity.cs" />
     <Compile Include="UI\ConversationListActivity.cs" />
+    <Compile Include="UI\FriendListFragment.cs" />
     <Compile Include="UI\HomeActivity.cs" />
+    <Compile Include="UI\PersonalDetailActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -102,7 +115,9 @@
     <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\rc_an_voice_receive.xml" />
@@ -279,7 +294,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\rc_ic_camera.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\rc_ic_def_coversation_portrait.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\rc_ic_def_coversation_portrait2.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\rc_ic_def_msg_portrait.png" />
@@ -1026,7 +1041,9 @@
     <AndroidResource Include="Resources\layout\rc_item_location_message.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\rc_item_message.xml" />
+    <AndroidResource Include="Resources\layout\rc_item_message.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\rc_item_preview_fragment.xml" />
@@ -1140,7 +1157,9 @@
     <AndroidResource Include="Resources\values\rc_string.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values\rc_style.xml" />
+    <AndroidResource Include="Resources\values\rc_style.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\rc_theme.xml" />
@@ -1164,10 +1183,30 @@
     <AndroidResource Include="Resources\drawable\demo_title_back.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RongIM.Droid\RongIM.Droid.csproj">
-      <Project>{dcec504c-ad55-4225-8ba3-62535da64e35}</Project>
-      <Name>RongIM.Droid</Name>
-    </ProjectReference>
+    <AndroidResource Include="Resources\layout\demo_personalDetail.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Colors.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\demo_group_join_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\demo_friendList.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\demo_chat.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\rc_ic_def_coversation_portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\rc_ic_def_coversation_portrait.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
