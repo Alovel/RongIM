@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -43,6 +43,10 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
+    <Reference Include="RongIM.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RongIM.Droid.1.1.2\lib\MonoAndroid50\RongIM.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,7 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\ConverSationList.axml">
@@ -81,12 +87,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RongIM.Droid\RongIM.Droid.csproj">
-      <Project>{dcec504c-ad55-4225-8ba3-62535da64e35}</Project>
-      <Name>RongIM.Droid</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\rc_an_voice_receive.xml" />
