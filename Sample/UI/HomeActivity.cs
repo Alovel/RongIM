@@ -10,7 +10,7 @@ using IO.Rong.Imkit.Fragment;
 
 namespace Sample.UI
 {
-    [Activity(Label = "HomeActivity")]
+    [Activity(Label = "HomeActivity", WindowSoftInputMode = SoftInput.AdjustPan)]
     public class HomeActivity : FragmentActivity
     {
         private ViewPager mViewPager;
@@ -28,6 +28,8 @@ namespace Sample.UI
             mViewPager = FindViewById<ViewPager>(Resource.Id.viewPager);
             mConversationList = InitConversationList();
             mFragments.Add(mConversationList);
+            mFragments.Add(FriendListFragment.Instance);
+            mFragments.Add(ChatFragment.Instance);
             mAdapter = new FAdapter(SupportFragmentManager, mFragments);
             mViewPager.Adapter = mAdapter;
         }

@@ -11,6 +11,13 @@ using IO.Rong.Imlib.Model;
 namespace Sample.UI
 {
     [Activity(Label = "ConversationActivity")]
+    [IntentFilter(new string[] { "android.intent.action.VIEW" },
+        Categories = new string[] { "android.intent.category.DEFAULT"  },
+        DataScheme = "rong",
+        DataPathPrefix = "/conversation/",
+        DataHost ="Sample.Sample"
+        )]
+
     public class ConversationActivity :FragmentActivity
     {
 
