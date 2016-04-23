@@ -5,8 +5,13 @@
     android:layout_height="fill_parent"
     android:gravity="center">
     <Button
+        android:id="@+id/mBtn1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="用户1登陆" />
+    <Button
         android:id="@+id/MyButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Hello" />
+        android:text="用户2登陆" />
 </LinearLayout>

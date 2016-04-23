@@ -2,4 +2,9 @@
 <resources>
     <string name="Hello">登录</string>
     <string name="ApplicationName">Sample</string>
+
+  <!--personal detail-->
+  <string name="personal_send_message">"发消息"</string>
+  <string name="add_friend">"添加到通讯录"</string>
+  
 </resources>
